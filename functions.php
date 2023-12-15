@@ -4,6 +4,7 @@ function organi_setup()
 {
     load_theme_textdomain('organi', get_template_part('/languages'));
     add_theme_support('title-tag');
+    add_theme_support('woocommerce');
 
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'organi'),
