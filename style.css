@@ -198,7 +198,7 @@ input[type="number"] {
   margin-bottom: 37px !important;
 }
 .woocommerce-Price-amount.amount {
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 18px;
 }
 .shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents a.button,

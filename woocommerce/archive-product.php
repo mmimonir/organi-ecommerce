@@ -47,6 +47,35 @@ get_header('shop');
 				do_action('woocommerce_sidebar'); ?>
 			</div>
 			<div class="col-lg-9 col-md-7">
+				<div class="product__discount">
+					<div class="section-title product__discount__title">
+						<h2>Sale Off</h2>
+					</div>
+					<div class="row">
+						<div class="product__discount__slider owl-carousel">
+							<?php
+							$args = array(
+								'post_type' => 'product',
+								'post_per_page' => -1,
+								'meta_query' => array(
+									array(
+										'key' => '_sale_price',
+									)
+								),
+							);
+							$query = new WP_Query($args);
+							while ($query->have_posts()) {
+								$query->the_post();
+							?>
+								<div class="col-lg-4">
+									<?php wc_get_template_part('content', 'product'); ?>
+								</div>
+							<?php
+							};
+							?>
+						</div>
+					</div>
+				</div>
 				<?php
 				if (woocommerce_product_loop()) {
 
